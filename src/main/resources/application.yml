@@ -8,5 +8,10 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    spring:
+      liquibase:
+        enabled: true
+        change-log: classpath:db/changelog/db.changelog-master.yaml
+
