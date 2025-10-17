@@ -1,16 +1,24 @@
 package org.burenkov.task_manager.task.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.time.Instant;
 
 @Data
 @Builder
-public class TaskCreateDto {
+public class TaskRequestDto {
 
+    @NotNull
     private String title;
+
+    @NotNull
     private String description;
+
+    @NotNull
     private String status;
-    private Timestamp dueDate;
+
+    @NotNull
+    private Instant dueDate;
 }
